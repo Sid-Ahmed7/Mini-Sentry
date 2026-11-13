@@ -2,6 +2,7 @@ package com.sentry.backend.constants;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.regex.Pattern;
 
 import lombok.NoArgsConstructor;
 
@@ -33,4 +34,21 @@ public static final Charset STANDARD_CHARSETS = StandardCharsets.UTF_8;
     /*Secret */
     public static final String SHA_256 = "SHA-256";
 
+/*Validation */
+    public static final Integer MAX_FRAMES = 100;
+    public static final Integer MAX_TAGS = 30;
+    public static final Integer MAX_BREADCRUMBS = 50;
+    public static final Pattern PLATFORM_PATTERN = Pattern.compile("^[a-z]{2,20}$");
+    public static final Pattern RELEASE_PATTERN = Pattern.compile("^[A-Za-z0-9._+\\-]{1,64}$");
+    public static final Pattern ENVIRONMENT_PATTERN = Pattern.compile("^[A-Za-z0-9._\\-]{1,32}$");
+
+/*Payload Validator */
+    public static final Integer MAX_REQUIRED = 200;
+    public static final Integer MAX_OPTIONAL = 2000;
+    public static final Integer MAX_OPTIONAL_URL = 500;
+    public static final Integer MAX_OPTIONAL_FRAME_FUNCTION = 300;
+    public static final Integer MAX_OPTIONAL_FRAME_FILE = 500;
+    public static final Integer MAX_TAG_KEY = 64;
+    public static final Integer MAX_BREADCRUMB_MESSAGE= 300;
+    public static final Integer MAX_TAG_VALUE= 300;
 }
