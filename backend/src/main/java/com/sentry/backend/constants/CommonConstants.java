@@ -51,4 +51,38 @@ public static final Charset STANDARD_CHARSETS = StandardCharsets.UTF_8;
     public static final Integer MAX_TAG_KEY = 64;
     public static final Integer MAX_BREADCRUMB_MESSAGE= 300;
     public static final Integer MAX_TAG_VALUE= 300;
+
+/*Processing */
+    /*SensitiveData */
+    public static final String REDACTED = "[REDACTED]";
+    public static final Pattern SENSITIVE_KEY = Pattern.compile("(?i)(pass(word|wd)?|secret|token|authorization|auth|cookie|session|api[-_]?key|credential|private)");
+    public static final Pattern JWT = Pattern.compile("\\beyJ[A-Za-z0-9_-]{5,}\\.[A-Za-z0-9_-]{5,}\\.[A-Za-z0-9_-]{5,}\\b");
+    public static final Pattern BEARER = Pattern.compile("(?i)\\b(bearer|basic)\\s+[A-Za-z0-9._~+/=-]{8,}");
+    public static final Pattern KEY_VALUE = Pattern.compile("(?i)\\b(pass(?:word|wd)?|secret|token|api[-_]?key|authorization)\\s*[=:]\\s*[^\\s,;&\"']+");
+    public static final Pattern EMAIL = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}");
+    public static final Pattern LONG_HEX = Pattern.compile("\\b[A-Fa-f0-9]{32,}\\b");
+
+    /*StackFrameClassifier */
+    public static final String[] LIBRARY_MARKERS = {"node_modules", "/vendor", "vendor.", "webpack/runtime", "react-dom", "<anonymous>","java.", "javax.", "jakarta.", "jdk.", "sun.", "org.springframework", "org.apache","org.hibernate", "com.zaxxer", "com.sun.", "io.netty"};
+
+    /*FingerPrintGenerator */
+    public static final Integer MAX_APP_FRAMES = 5;
+    public static final char LINE_SEPARATOR = '\n';
+    public static final char FUNCTION_FILE_SEPARATOR = '|';
+
+    /*MessageNormalizer */
+    public static final Pattern UUID_PATTERN = Pattern.compile("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
+    public static final Pattern HEX_PATTERN = Pattern.compile("\\b[0-9a-f]{8,}\\b");
+    public static final Pattern NUMBER_PATTERN = Pattern.compile("\\d+");
+    public static final String UUID_TOKEN = "<uuid>";
+    public static final String HEX_TOKEN = "<hex>";
+    public static final String NUMBER_TOKEN = "<n>";
+    public static final Integer MAX_LENGTH = 200;
+
+    /*Filepaths */
+    public static final char QUERY_START = '?';
+    public static final char FRAGMENT_START = '#';
+    public static final char UNIX_SEPARATOR = '/';
+    public static final char WINDOWS_SEPARATOR = '\\';
+
 }
