@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import com.sentry.backend.config.RabbitConfig;
 import com.sentry.backend.constants.CommonConstants;
-import com.sentry.backend.services.EventProcessingService;
+import com.sentry.backend.services.eventProcessing.EventProcessingService;
 
 @Component 
 public class EventQueueListener {

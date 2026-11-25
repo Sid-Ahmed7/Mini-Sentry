@@ -85,4 +85,12 @@ public static final Charset STANDARD_CHARSETS = StandardCharsets.UTF_8;
     public static final char UNIX_SEPARATOR = '/';
     public static final char WINDOWS_SEPARATOR = '\\';
 
+    /*SourceMap */
+    public static final String BASE64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+    /*LiveStream */
+    public static final Integer MAX_STREAMS = 100;
+    public static final long TIMEOUT_MS = 30 * 60 * 1000L;
+
+
 }

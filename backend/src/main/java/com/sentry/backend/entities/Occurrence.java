@@ -35,4 +35,11 @@ public class Occurrence {
 
     @Column(nullable = false, columnDefinition = "text")
     private String payload;
+
+    public Occurrence(UUID issueId, Instant receivedAt, String release, String payload) {
+        this.issueId = issueId;
+        this.receivedAt = receivedAt;
+        this.release = release;
+        this.payload = payload;
+    }
 }
