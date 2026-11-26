@@ -92,5 +92,9 @@ public static final Charset STANDARD_CHARSETS = StandardCharsets.UTF_8;
     public static final Integer MAX_STREAMS = 100;
     public static final long TIMEOUT_MS = 30 * 60 * 1000L;
 
+    /*AuthController */
+    public static final int MAX_FAILURES = 5;
+    public static final long WINDOW_MILLS = 15 * 60 * 1000L;
+
 
 }

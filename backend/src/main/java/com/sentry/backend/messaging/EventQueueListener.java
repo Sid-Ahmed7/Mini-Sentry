@@ -3,7 +3,6 @@ package com.sentry.backend.messaging;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-import com.sentry.backend.config.RabbitConfig;
 import com.sentry.backend.constants.CommonConstants;
 import com.sentry.backend.services.eventProcessing.EventProcessingService;
 

@@ -16,6 +16,7 @@ import com.sentry.backend.entities.Occurrence;
 import com.sentry.backend.enumeration.IssueStatus;
 import com.sentry.backend.live.LiveStream;
 import com.sentry.backend.messaging.EventMessage;
+import com.sentry.backend.mapping.IssueMapper;
 import com.sentry.backend.processing.FingerprintGenerator;
 import com.sentry.backend.processing.StackFrameClassifier;
 import com.sentry.backend.processing.message.FilePaths;
@@ -85,7 +86,7 @@ public class EventProcessingService implements IEventProcessingService {
             log.info("ALERT {} issue={} project={}", isNew ? "new-issue" : "regression", issue.getId(), issue.getProjectId());
         }
         if (issue.getStatus() != IssueStatus.IGNORED) {
-            afterCommit(() -> liveStream.publish(issue));
+            afterCommit(() -> liveStream.publish(IssueMapper.toUpdate(issue, isNew, regressed)));
         }
     }
 
